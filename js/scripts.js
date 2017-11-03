@@ -1,5 +1,5 @@
 //BIZ
-function Pizza(size, topping,) {
+function Pizza(size, topping) {
   this.size = size;
   this.topping = topping;
 };
@@ -39,10 +39,8 @@ $(document).ready(function(){
     event.preventDefault();
     var pizzaSize = $("select#size-select").val();
     var pizzaTop = $("select#topping-select").val();
-    var newPizza = new Pizza(pizzaSize, pizzaTop);
+    var newPizza = new Pizza(pizzaSize, pizzaTop, pizzaPrice);
     var pizzaPrice = newPizza.orderTotal();
-
-
 
     $("#cost").text(pizzaPrice);
     $("#built-pizza").text(pizzaSize + ", " + pizzaTop + " " + "Pizza");
@@ -51,14 +49,4 @@ $(document).ready(function(){
   });
 });
 
-
-//
-// if (pizzaTop === "Pepperoni") {
-//   var pizzaTopCost = 3;
-// } else if (pizzaTop === "Artichokes") {
-//   var pizzaTopCost = 3;
-// } else if (pizzaTop === "Mushrooms") {
-//   var pizzaTopCost = 1;
-// } else {
-//   var pizzaTopCost = 0;
-// }
+// pizzaSize, pizzaTop, pizzaPrice
