@@ -24,28 +24,30 @@ Pizza.prototype.type = function() {
   }
 };
 
-for (var index = 0; index <= toppingsArray.length; index++) {
-  var toppingsPrice = toppingsArray.length[i];
-  this.price += toppingsPrice;
-}
 
 
 //UI
-$(document).ready(function(){
+$(document).ready(function() {
   $("form#pizza-form").submit(function(event) {
-    event.preventDefault();
     var newPizza = new Pizza(pizzaSize, pizzaType, toppingsArray);
     var pizzaSize = $("select#size-select").val();
     var pizzaType = $("select#type-select").val();
-    var extraTops = $("input:checkbox[value=topping]:checked").each(function(){
-      toppingsArray.push($(this)).val();
-    });
     var toppingsArray = [];
+    var extraTops = $("input:checkbox[name=topping]:checked").each(function() {
+      toppingsArray.push($(this)).val();
+      if (extraTops ===  true) {
+      for (var index = 0; index <= toppingsArray.length; index++) {
+        var toppingsPrice = toppingsArray.length[i];
+        this.price += toppingsPrice;
+      }
+    }
+  });
 
 
     $("#cost").text(newPizza.price);
     $("#built-pizza").text(pizzaSize + ", " + pizzaType + " " + "Pizza");
     $(".reciept").show();
 
+    event.preventDefault();
   });
 });
