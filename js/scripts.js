@@ -4,27 +4,37 @@ function Pizza(size, topping, cost) {
   this.topping = topping;
 };
 
-Pizza.prototype.order = function() {
-  if (this.size === "Large 18'" && this.topping === "Cheese (4 cheese blend)") {
+Pizza.prototype.orderTotal = function() {
+  if (this.size === "Large (18')" && this.topping === "Cheese (4 cheese blend)") {
    return "$18.00";
-  } else if (this.size === "Large 18'" && this.topping === "Pepperoni" || this.size === "Large 18'" && this.topping === "Artichokes") {
+ } else if (this.size === "Large (18')" && this.topping === "Pepperoni") {
    return "$21.00";
- } else if (this.size === "Large 18'" && this.topping === "Mushrooms") {
+ } else if (this.size === "Large (18')" && this.topping === "Artichokes") {
+   return "$21.00"
+ } else if (this.size === "Large (18')" && this.topping === "Mushrooms") {
    return "$19.00";
- } else if (this.size === "Medium 16'" && this.topping === "Cheese (4 cheese blend)") {
+ } else if (this.size === "Medium (16'))" && this.topping === "Cheese (4 cheese blend)") {
    return "$16.00";
- } else if (this.size === "Medium 16'" && this.topping === "Pepperoni" || this.size === "Medium 16''" && this.topping === "Artichokes") {
+ } else if (this.size === "Medium (16'))" && this.topping === "Pepperoni") {
    return "$19.00";
- } else if (this.size === "Medium 16'" && this.topping === "Mushrooms") {
+ } else if (this.size === "Medium (16'))" && this.topping === "Artichokes") {
+   return "$19.00";
+ } else if (this.size === "Medium (16'))" && this.topping === "Mushrooms") {
    return "$17.00";
- } else if (this.size === "Small 12'" && this.topping === "Cheese (4 cheese blend)") {
+ } else if (this.size === "Small (12'))" && this.topping === "Cheese (4 cheese blend)") {
    return "$12.00";
- } else if (this.size === "Small 12'" && this.topping === "Pepperoni" || this.size === "Small 12''" && this.topping === "Artichokes") {
+ } else if (this.size === "Small (12'))" && this.topping === "Pepperoni") {
    return "$15.00";
- } else if (this.size === "Small 12'" && this.topping === "Mushrooms") {
+ } else if (this.size === "Small (12'))'" && this.topping === "Artichokes") {
+   return "$15.00";
+ } else if (this.size === "Small (12'))" && this.topping === "Mushrooms") {
    return "$13.00";
  }
 };
+
+// Pizza.prototype.pizzaOrder = function() {
+//   return this.size + this.topping;
+// }
 
 
 
@@ -38,22 +48,19 @@ $(document).ready(function(){
     var pizzaSize = $("select#size-select").val();
     var pizzaTop = $("select#topping-select").val();
     var newPizza = new Pizza(pizzaSize, pizzaTop);
-    var pizzaPrice = newPizza.order();
+    var pizzaPrice = newPizza.orderTotal();
+    // var pizzaOrder = newPizza.orderDetails();
 
 
+
+    $("#cost").text(pizzaPrice);
+    $("#built-pizza").text(pizzaSize + ", " + pizzaTop + " " + "Pizza");
     $(".reciept").show();
 
   });
 });
 
 
-// if (pizzaSize === "Large 18'") {
-//   var pizzaCost = 18;
-// } else if (pizzaSize === "Medium 16'") {
-//   var pizzaCost = 16;
-// } else {
-//   var pizzaCost = 12;
-// }
 //
 // if (pizzaTop === "Pepperoni") {
 //   var pizzaTopCost = 3;
