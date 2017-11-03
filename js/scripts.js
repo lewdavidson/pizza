@@ -26,7 +26,7 @@ Pizza.prototype.type = function() {
 
 for (var index = 0; index <= toppingsArray.length; index++) {
   var toppingsPrice = toppingsArray.length[i];
-  return this.price += toppingsPrice;
+  this.price += toppingsPrice;
 }
 
 
@@ -34,16 +34,16 @@ for (var index = 0; index <= toppingsArray.length; index++) {
 $(document).ready(function(){
   $("form#pizza-form").submit(function(event) {
     event.preventDefault();
+    var newPizza = new Pizza(pizzaSize, pizzaType, toppingsArray);
     var pizzaSize = $("select#size-select").val();
     var pizzaType = $("select#type-select").val();
-    var newPizza = new Pizza(pizzaSize, pizzaType, extraTops, pizzaPrice);
     var extraTops = $("input:checkbox[value=topping]:checked").each(function(){
       toppingsArray.push($(this)).val();
     });
     var toppingsArray = [];
 
 
-    $("#cost").text(pizza.price);
+    $("#cost").text(newPizza.price);
     $("#built-pizza").text(pizzaSize + ", " + pizzaType + " " + "Pizza");
     $(".reciept").show();
 
