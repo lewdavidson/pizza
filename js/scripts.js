@@ -1,5 +1,5 @@
 //BIZ
-function Pizza(size, topping, cost) {
+function Pizza(size, topping,) {
   this.size = size;
   this.topping = topping;
 };
@@ -10,35 +10,27 @@ Pizza.prototype.orderTotal = function() {
  } else if (this.size === "Large (18')" && this.topping === "Pepperoni") {
    return "$21.00";
  } else if (this.size === "Large (18')" && this.topping === "Artichokes") {
-   return "$21.00"
+   return "$21.00";
  } else if (this.size === "Large (18')" && this.topping === "Mushrooms") {
    return "$19.00";
- } else if (this.size === "Medium (16'))" && this.topping === "Cheese (4 cheese blend)") {
+ } else if (this.size === "Medium (16')" && this.topping === "Cheese (4 cheese blend)") {
    return "$16.00";
- } else if (this.size === "Medium (16'))" && this.topping === "Pepperoni") {
+ } else if (this.size === "Medium (16')" && this.topping === "Pepperoni") {
    return "$19.00";
- } else if (this.size === "Medium (16'))" && this.topping === "Artichokes") {
+ } else if (this.size === "Medium (16')" && this.topping === "Artichokes") {
    return "$19.00";
- } else if (this.size === "Medium (16'))" && this.topping === "Mushrooms") {
+ } else if (this.size === "Medium (16')" && this.topping === "Mushrooms") {
    return "$17.00";
- } else if (this.size === "Small (12'))" && this.topping === "Cheese (4 cheese blend)") {
+ } else if (this.size === "Small (12')" && this.topping === "Cheese (4 cheese blend)") {
    return "$12.00";
- } else if (this.size === "Small (12'))" && this.topping === "Pepperoni") {
+ } else if (this.size === "Small (12')" && this.topping === "Pepperoni") {
    return "$15.00";
- } else if (this.size === "Small (12'))'" && this.topping === "Artichokes") {
+ } else if (this.size === "Small (12')'" && this.topping === "Artichokes") {
    return "$15.00";
- } else if (this.size === "Small (12'))" && this.topping === "Mushrooms") {
+ } else if (this.size === "Small (12')" && this.topping === "Mushrooms") {
    return "$13.00";
  }
 };
-
-// Pizza.prototype.pizzaOrder = function() {
-//   return this.size + this.topping;
-// }
-
-
-
-
 
 
 //UI
@@ -49,7 +41,6 @@ $(document).ready(function(){
     var pizzaTop = $("select#topping-select").val();
     var newPizza = new Pizza(pizzaSize, pizzaTop);
     var pizzaPrice = newPizza.orderTotal();
-    // var pizzaOrder = newPizza.orderDetails();
 
 
 
