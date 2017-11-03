@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <title>Pizza Pizza</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class-"jumbotron">
+        <h1>Wlecome to Pizza Pizza!</h1>
+        <p>Please create your pizza using the form below. Take out only!</p>
+      </div>
+      <form>
+        <select class="form-control form-control-lg" id="size-select">
+          <option>Pizza Size</option>
+          <option>Small 12'</option>
+          <option>Medium 16'</option>
+          <option>Large 18'</option>
+        </select>
+        <select class="form-control" id="topping-select">
+          <option>Select a topping</option>
+          <option>Cheese (4 cheese blend)</option>
+          <option>Pepperoni</option>
+          <option>Artichokes</option>
+          <option>Mushrooms</option>
+        </select>
+        <button type="submit" class="btn btn-block btn-danger">Order Now</button>
+      </form>
+      <div class="reciept">
+        <h2>Your Reciept:</h2>
+        <p>Your order will be available to pick up in 30 minutes.</p>
+        <ul>
+          <li>Final Cost:</li>
+          <li>Final Order:</li>
+        </ul>
+        <p>Thank you, please come again soon!</p>
+      </div>
+    </div><!--container-->
+  </body>
+</html>
