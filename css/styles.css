@@ -1,3 +1,62 @@
+/*font-family: 'Audiowide', cursive;*/
+/*font-family: 'Unica One', cursive;*/
+body {
+  font-family: 'Unica One', cursive;
+  background-image: url("../img/space.jpg");
+}
+
 .reciept {
-  display: none;
+  /*display: none;*/
+  text-align: center;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.reciept h2 {
+  font-family: 'Audiowide', cursive;
+}
+
+.jumbotron {
+  background-color: #827eae;
+  padding-bottom: 15px;
+}
+
+.jumbotron p {
+  font-size: 35px;
+}
+
+.jumbotron h1 {
+  font-family: 'Audiowide', cursive;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+#info {
+  font-size: 35px;
+  color: white;
+}
+
+#questions {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+button {
+  background-color: 	#454c92
+}
+.card {
+  border: none;
+}
+
+.card-header {
+  background-color: #454c92;
+}
+
+.card-body {
+  background-color: #827eae;
 }

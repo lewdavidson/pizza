@@ -5,14 +5,26 @@
     <script src="js/scripts.js"></script>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Unica+One" rel="stylesheet">
     <meta charset="utf-8">
-    <title>Pizza Pizza</title>
+    <title>Pluto's Pizza</title>
   </head>
   <body>
     <div class="container">
-      <div class-"jumbotron">
-        <h1>Welcome to Pizza Pizza!</h1>
-        <p>Please create your pizza using the form below. Take out only!</p>
+      <div class="jumbotron">
+        <h1 class="display-2">Welcome to Pluto's Pizza!</h1>
+        <p class="lead">Our pies are out of this world</p>
+      </div>
+      <div id="info">
+        <p id="questions">Questions? Give us a call at (666) 666-6666!</p>
+        <p>Hours of operation:
+          <ul>
+            <li>Monday-Friday: 12pm - 9pm</li>
+            <li>Saturday: 12pm - 12am</li>
+            <li>Sunday: Closed</li>
+          </ul>
+        </p>
+        <h3>Please use our helpful form below to assemble your order for lift-off (pick-up).</h3>
       </div>
       <form id="pizza-form">
         <select class="form-control form-control-lg" id="size-select">
@@ -21,24 +33,48 @@
           <option id="med">Medium (16')</option>
           <option id="lg">Large (18')</option>
         </select>
-        <select class="form-control" id="topping-select">
-          <option>Select a topping</option>
+        <select class="form-control form-control-lg" id="type-select">
+          <option>Select a main topping</option>
           <option id="chz">Cheese (4 cheese blend)</option>
           <option id="pep">Pepperoni</option>
-          <option id="arti">Artichokes</option>
-          <option id="mush">Mushrooms</option>
         </select>
-        <button class="btn btn-block btn-danger">Place Your Order</button>
+        <br><h4>Add Extra Toppings ($1 each)</h4><br>
+        <div class="form-check">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" value="topping">
+            Black Olives
+        </label>
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" value="topping">
+          Red Onion
+        </label>
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" value="topping">
+          Crushed Garlic
+        </label>
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" value="topping">
+          Pineapple
+        </label>
+        </div>
+        <button class="btn btn-block">Place Your Order</button>
       </form>
-        <div class="reciept">
+      <div class="reciept card">
+        <div class= "card-header">
           <h2>Your Reciept:</h2>
+        </div>
+        <div class="card-body">
           <p>Your Order will be ready in 30 minutes. Pick-up only.</p>
-          <ul>
+          <p>Pluto's Pizza is located at <br>6666 NW 666th Place<br>
+            Hell, MI<br>
+             32806<br></p>
+          <ul class="list-unstyled">
             <li>Your Order: <span id="built-pizza"></span></li>
             <li>Your Total: <span id="cost"></span></li>
           </ul>
           <p>Thank you, please come again soon!</p>
         </div>
+      </div>
     </div><!--container-->
   </body>
 </html>
