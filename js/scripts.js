@@ -2,40 +2,31 @@
 function Pizza(size, topping, cost) {
   this.size = size;
   this.topping = topping;
-  this.cost = 0;
 };
 
-Pizza.prototype.pizzaSizeTotal = function() {
-  var sizeOrder = this.size;
-} if (this.size === "Large 18'") {
-  this.cost === 18;
-} else if (this.size === "Medium 16'") {
-  this.cost === 16;
-} else if (this.size === "Small 12'") {
-  this.cost === 12;
-} return sizeOrder;
+Pizza.prototype.order = function() {
+  if (this.size === "Large 18'" && this.topping === "Cheese (4 cheese blend)") {
+   return "$18.00";
+  } else if (this.size === "Large 18'" && this.topping === "Pepperoni" || this.size === "Large 18'" && this.topping === "Artichokes") {
+   return "$21.00";
+ } else if (this.size === "Large 18'" && this.topping === "Mushrooms") {
+   return "$19.00";
+ } else if (this.size === "Medium 16'" && this.topping === "Cheese (4 cheese blend)") {
+   return "$16.00";
+ } else if (this.size === "Medium 16'" && this.topping === "Pepperoni" || this.size === "Medium 16''" && this.topping === "Artichokes") {
+   return "$19.00";
+ } else if (this.size === "Medium 16'" && this.topping === "Mushrooms") {
+   return "$17.00";
+ } else if (this.size === "Small 12'" && this.topping === "Cheese (4 cheese blend)") {
+   return "$12.00";
+ } else if (this.size === "Small 12'" && this.topping === "Pepperoni" || this.size === "Small 12''" && this.topping === "Artichokes") {
+   return "$15.00";
+ } else if (this.size === "Small 12'" && this.topping === "Mushrooms") {
+   return "$13.00";
+ }
+};
 
-Pizza.prototype.pizzaToppingTotal = function () {
-  var toppingOrder = this.topping;
-} if (this.topping === "Pepperoni") {
-  this.cost += 3;
-} else if (this.topping === "Artichoke") {
-  this.cost += 3;
-} else if (this.topping === "Mushrooms") {
-  this.cost += 1;
-} return toppingOrder;
 
-pizza.prototype.orderTotal = function () {
-  var finalOrder = this.size + this.topping + this.cost;
-  return finalOrder;
-}
-
-var newPizza = new Pizza();
-var lgPizza = 18;
-var medPizza = 16;
-var smPizza = 12;
-var peppArt = 3;
-var mushroom = 1;
 
 
 
@@ -46,10 +37,30 @@ $(document).ready(function(){
     event.preventDefault();
     var pizzaSize = $("select#size-select").val();
     var pizzaTop = $("select#topping-select").val();
+    var newPizza = new Pizza(pizzaSize, pizzaTop);
+    var pizzaPrice = newPizza.order();
 
-    var order = newPizza.pizzaTotal();
 
     $(".reciept").show();
 
   });
 });
+
+
+// if (pizzaSize === "Large 18'") {
+//   var pizzaCost = 18;
+// } else if (pizzaSize === "Medium 16'") {
+//   var pizzaCost = 16;
+// } else {
+//   var pizzaCost = 12;
+// }
+//
+// if (pizzaTop === "Pepperoni") {
+//   var pizzaTopCost = 3;
+// } else if (pizzaTop === "Artichokes") {
+//   var pizzaTopCost = 3;
+// } else if (pizzaTop === "Mushrooms") {
+//   var pizzaTopCost = 1;
+// } else {
+//   var pizzaTopCost = 0;
+// }
