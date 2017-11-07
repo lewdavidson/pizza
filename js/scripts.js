@@ -18,10 +18,9 @@ Pizza.prototype.sizeCalc = function() {
 
 Pizza.prototype.typeCalc = function() {
   if (this.type = "Pepperoni") {
-    console.log(this.type);
-    return this.price + 3;
+    return newPizza.price += 3;
   } else {
-    return this.price;
+    return newPizza.price;
   }
 };
 
