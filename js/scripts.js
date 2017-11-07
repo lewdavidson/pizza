@@ -36,7 +36,8 @@ $(document).ready(function() {
     var pizzaType = $("select#type-select").val();
     var toppingsArray = [];
     var extraTops = $("input:checkbox[name=topping]:checked").each(function() {
-      toppingsArray.push($(this)).val();
+      console.log($(this).val());
+      toppingsArray.push($(this).val());
       if (toppingsArray >= 1) {
       for (var index = 0; index <= toppingsArray.length; index++) {
         var toppingsPrice = toppingsArray.length[i];
