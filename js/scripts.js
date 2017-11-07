@@ -6,7 +6,7 @@ function Pizza(size, type, toppingsArray, price) {
   this.price = 0;
 };
 
-Pizza.prototype.size = function() {
+Pizza.prototype.sizeCalc = function() {
   if (this.size === "Large (18')") {
     return this.price = 18;
   } else if (this.size === "Medium (16')") {
@@ -31,22 +31,20 @@ $(document).ready(function() {
   $("form.pizza-form").submit(function(event) {
     event.preventDefault();
 
-    var newPizza = new Pizza(pizzaSize, pizzaType, toppingsArray);
+    var newPizza = new Pizza();
     var pizzaSize = $("select#size-select").val();
+    newPizza.sizeCalc();
     var pizzaType = $("select#type-select").val();
     var toppingsArray = [];
     var extraTops = $("input:checkbox[name=topping]:checked").each(function() {
-      console.log($(this).val());
       toppingsArray.push($(this).val());
-      if (toppingsArray >= 1) {
+      if (toppingsArray <= 1) {
       for (var index = 0; index <= toppingsArray.length; index++) {
         var toppingsPrice = toppingsArray.length[i];
         newPizza.price += toppingsPrice;
       }
     }
   });
-
-
     $("#cost").text(newPizza.price);
     $("#built-pizza").text(pizzaSize + ", " + pizzaType + " " + "Pizza");
     // $(".reciept").show();
