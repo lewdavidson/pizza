@@ -16,8 +16,9 @@ Pizza.prototype.sizeCalc = function() {
   }
 };
 
-Pizza.prototype.type = function() {
-  if (this.type === "Pepperoni") {
+Pizza.prototype.typeCalc = function() {
+  if (this.type = "Pepperoni") {
+    console.log(this.type);
     return this.price + 3;
   } else {
     return this.price;
@@ -27,14 +28,15 @@ Pizza.prototype.type = function() {
 
 
 //UI
+var newPizza = new Pizza();
 $(document).ready(function() {
   $("form.pizza-form").submit(function(event) {
     event.preventDefault();
 
-    var newPizza = new Pizza();
     var pizzaSize = $("select#size-select").val();
     newPizza.sizeCalc();
     var pizzaType = $("select#type-select").val();
+    newPizza.typeCalc();
     var toppingsArray = [];
     var extraTops = $("input:checkbox[name=topping]:checked").each(function() {
       toppingsArray.push($(this).val());
