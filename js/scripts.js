@@ -40,15 +40,13 @@ $(document).ready(function() {
     var extraTops = $("input:checkbox[name=topping]:checked").each(function() {
       toppingsArray.push($(this).val());
 
-      newPizza.price += toppingsArray.length;
-      console.log(toppingsArray);
-
       $("#cost").text(newPizza.price);
       $("#built-pizza").text(pizzaSize + ", " + pizzaType + " " + "Pizza");
       // $(".reciept").show();
     });
   });
 });
+
       //   for (var index = 0; index <= toppingsArray.length; index++) {
       //     var toppingsPrice = toppingsArray.length;
       //     if (toppingsArray.length >= 1) {
