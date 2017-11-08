@@ -39,10 +39,11 @@ $(document).ready(function() {
     var toppingsArray = [];
     var extraTops = $("input:checkbox[name=topping]:checked").each(function() {
       toppingsArray.push($(this).val());
-      if (toppingsArray <= 1) {
+      if (toppingsArray.length <= 1) {
       for (var index = 0; index <= toppingsArray.length; index++) {
-        var toppingsPrice = toppingsArray.length[i];
+        var toppingsPrice = index;
         newPizza.price += toppingsPrice;
+        // console.log(toppingsPrice);
       }
     }
   });
