@@ -6,7 +6,7 @@ body {
 }
 
 .reciept {
-  /*display: none;*/
+  display: none;
   text-align: center;
   font-size: 20px;
   margin-top: 15px;

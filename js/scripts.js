@@ -1,8 +1,8 @@
 //BIZ
-function Pizza(size, type, toppingsArray, price) {
+function Pizza(size, type, extraTops, price) {
   this.size = size;
   this.type = type;
-  this.toppings = toppingsArray;
+  this.toppings = extraTops;
   this.price = 0;
 };
 
@@ -38,18 +38,10 @@ $(document).ready(function() {
     newPizza.typeCalc();
     var toppingsArray = [];
     var extraTops = $("input:checkbox[name=topping]:checked").length;
-      console.log(extraTops);
-
+       newPizza.price += extraTops;
       $("#cost").text(newPizza.price);
       $("#built-pizza").text(pizzaSize + ", " + pizzaType + " " + "Pizza");
-      // $(".reciept").show();
+      $(".reciept").show();
 
   });
 });
-
-      //   for (var index = 0; index <= toppingsArray.length; index++) {
-      //     var toppingsPrice = toppingsArray.length;
-      //     if (toppingsArray.length >= 1) {
-      // }
-
-// pizzaSize, pizzaType, toppingsArray
