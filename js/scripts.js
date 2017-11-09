@@ -37,13 +37,13 @@ $(document).ready(function() {
     var pizzaType = $("select#type-select").val();
     newPizza.typeCalc();
     var toppingsArray = [];
-    var extraTops = $("input:checkbox[name=topping]:checked").each(function() {
-      toppingsArray.push($(this).val());
+    var extraTops = $("input:checkbox[name=topping]:checked").length;
+      console.log(extraTops);
 
       $("#cost").text(newPizza.price);
       $("#built-pizza").text(pizzaSize + ", " + pizzaType + " " + "Pizza");
       // $(".reciept").show();
-    });
+
   });
 });
 
